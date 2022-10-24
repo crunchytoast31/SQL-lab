@@ -1,0 +1,72 @@
+1.Select all the rows from the "Customers" table. 
+
+Select * from Customers;
+
+2.Get distinct countries from the Customers table.
+
+select distinct Country from Customers;
+
+3.Get all the rows from the table Customers where the Customer’s ID starts with “BL”.
+
+Select * From Customers
+Where CustomerId like 'BL%';
+
+4.Get the first 100 records of the orders table. DISCUSS: Why would you do this? What else would you likely need to include in this query?
+
+select top 100 * from Orders
+
+5.Get all customers that live in the postal codes 1010, 3012, 12209, and 05023.
+
+select * from Customers where PostalCode in ('3021', '1010','12209','05023')
+
+6.Get all orders where the ShipRegion is not equal to NULL.
+
+select * from orders where ShipRegion is not null;
+
+7.Get all customers ordered by the country, then by the city.
+
+Select * from Customers
+Order by Country, City;
+
+8.Add a new customer to the customers table. You can use whatever values.
+
+Values('WWLW','Wee Woo','Limbo','Wail Alhashemi','243 st',null,34567,48197,'Italy',123.456.789)
+
+
+9.Update all ShipRegion to the value ‘EuroZone’ in the Orders table, where the ShipCountry is equal to France.  
+
+Update Orders
+set ShipRegion = 'EuroZone'
+where ShipCountry = 'France';
+
+10.Delete all orders from OrderDetails that have quantity of 1. 
+
+delete from [Order Details]
+where Quantity = 1;
+
+
+11.Find the CustomerID that placed order 10290 (orders table).
+
+select CustomerID from Orders
+where OrderID = 10290;
+
+12.Join the orders table to the customers table.
+
+select *from Customers 
+full join Orders on Customers.CustomerID = Orders.CustomerID;
+
+
+13.Get employees’ firstname for all employees who report to no one.
+
+select FirstName from Employees
+where ReportsTo is null;
+
+
+14.Get employees’ firstname for all employees who report to Andrew.
+
+select FirstName from Employees
+where ReportsTo = 2;
+
+
+
+
